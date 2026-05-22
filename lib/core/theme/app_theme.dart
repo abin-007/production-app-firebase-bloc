@@ -5,7 +5,7 @@ import 'package:production_ready_app/core/theme/app_text_style.dart';
 class AppTheme {
   static ThemeData getTheme() {
     return ThemeData(
-      brightness: Brightness.light,
+      brightness: Brightness.dark,
       textTheme: TextTheme(
         bodySmall: AppTextStyle.bodySmall,
         bodyMedium: AppTextStyle.bodyMedium,
@@ -14,13 +14,13 @@ class AppTheme {
       colorScheme: ColorScheme(
         brightness: Brightness.light,
         primary: AppColors.primary,
-        onPrimary: AppColors.background,
+        onPrimary: AppColors.surface,
         secondary: AppColors.secondary,
-        onSecondary: AppColors.background,
-        error: AppColors.errorColor,
+        onSecondary: AppColors.surface,
+        error: AppColors.red,
         onError: AppColors.surface,
-        surface: AppColors.background,
-        onSurface: AppColors.textColor,
+        surface: AppColors.surface,
+        onSurface: AppColors.text,
       ),
 
       elevatedButtonTheme: ElevatedButtonThemeData(
