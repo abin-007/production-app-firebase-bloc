@@ -23,15 +23,15 @@ class AppTheme {
         onSurface: AppColors.text,
       ),
 
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style:ElevatedButton.styleFrom(
-          elevation: 0,
-          backgroundColor: AppColors.primary,
-          foregroundColor: AppColors.background
-          //textStyle: AppTextStyle.Button,
-        )
+      // elevatedButtonTheme: ElevatedButtonThemeData(
+      //   style:ElevatedButton.styleFrom(
+      //     elevation: 0,
+      //     backgroundColor: AppColors.primary,
+      //     foregroundColor: AppColors.background
+      //     //textStyle: AppTextStyle.Button,
+      //   )
 
-      )
+      // )
     );
   }
 }
