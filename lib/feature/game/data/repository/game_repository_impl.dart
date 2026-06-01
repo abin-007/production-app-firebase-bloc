@@ -3,19 +3,20 @@ import 'package:dio/dio.dart';
 import 'package:production_ready_app/core/failure/failure.dart';
 import 'package:production_ready_app/core/model/either.dart';
 import 'package:production_ready_app/feature/game/data/datasource/game_remote_datasource.dart';
+//import 'package:production_ready_app/feature/game/data/datasource/game_remote_datasource.dart';
 import 'package:production_ready_app/feature/game/domain/game_repository.dart';
 
 class GameRepositoryImpl extends GameRepository {
-  final GameRepository gameRepository;
+  final GameRemoteDatasource gameRemoteDatasource;
 
   GameRepositoryImpl({
-    required this.gameRepository,
+    required this.gameRemoteDatasource,
   });
 @override
   Future<Either<Failure, void>> checkWord(String word)async {
    
     try{
-      var result = await  gameRepository.checkWord(word);
+      var result = await  gameRemoteDatasource.checkWord(word);
       return Right(null);
 
     }on DioException{
@@ -32,9 +33,9 @@ class GameRepositoryImpl extends GameRepository {
   Future<Either<Failure, String>> getRandomWord(int length) async{
     
   try{
-    var result =await gameRepository.getRandomWord(length);
+    var result =await gameRemoteDatasource.getRandomWord(length);
     try{
-       await gameRepository.checkWord(result);
+       await gameRemoteDatasource.checkWord(result);
 
     }catch(e){
       return getRandomWord(length);
