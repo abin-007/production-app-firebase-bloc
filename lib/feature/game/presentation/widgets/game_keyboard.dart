@@ -31,6 +31,8 @@ class GameKeyBoard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               ...rows.map((row) => _buildKeyBoard(context, state, row)),
+              const SizedBox(height: 10,),
+              _buildActionRow(context, state)
             ],
           ),
         );
