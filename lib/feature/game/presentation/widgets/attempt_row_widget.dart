@@ -22,9 +22,27 @@ class AttemptRowWidget extends StatelessWidget {
         final isCurrentAttempt =attemptsIndex == previousAttempts.length;
         return Row(
           children: List.generate(word.length,(letterIndex){
-            var text = _getLetter
+            var text = _getLetter(
+              letterIndex, attemptsIndex, previousAttempts,
+                currentAttempt, isCurrentAttempt
 
-          })
+              
+            );
+            var boxColor=_getBoxColor(
+              context, text, word, attemptsIndex, letterIndex, previousAttempts, isCurrentAttempt);
+              var textColor = _getTextColor(
+                context,
+                text,
+                word,
+                attemptsIndex,
+                letterIndex,
+                previousAttempts,
+                isCurrentAttempt);
+                return Expanded(
+                  child: LetterBoxWidget());
+
+          }
+          )
           
         );
       });
