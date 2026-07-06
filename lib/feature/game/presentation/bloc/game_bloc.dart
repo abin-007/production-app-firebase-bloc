@@ -64,7 +64,15 @@ class GameBloc extends Bloc<GameEvent, GameState> {
   Future onEnterAttemptEvent(
     EnterAttemptEvent event,
     Emitter<GameState> emit,
-  ) {
+  ) async{
+    var word = state.word ?? '';
+    var currentAttempt =state.currentAttempt ?? '';
+    var attempts = state.attempts ?? [];
+    if( word.isEmpty || currentAttempt.length < word.length){
+      return;
+    }
+    var checkWord = 
+
 
     
   }

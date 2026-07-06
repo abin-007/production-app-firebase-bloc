@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:production_ready_app/core/theme/app_colors.dart';
 import 'package:production_ready_app/feature/game/presentation/bloc/game_bloc.dart';
+import 'package:production_ready_app/feature/game/presentation/widgets/letter_box_widget.dart';
 
 class AttemptRowWidget extends StatelessWidget {
 
-  int attemptsIndex;
-  const AttemptRowWidget({
-    Key? key,
+  final int attemptsIndex;
+   const AttemptRowWidget({
+   super.key,
     required this.attemptsIndex,
-  }) : super(key: key);
+  }) ;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,11 @@ class AttemptRowWidget extends StatelessWidget {
                 previousAttempts,
                 isCurrentAttempt);
                 return Expanded(
-                  child: LetterBoxWidget());
+                  child: LetterBoxWidget(
+                    text: text,
+                    boxColor: boxColor,
+                    textColor: textColor,
+                  ));
 
           }
           )
