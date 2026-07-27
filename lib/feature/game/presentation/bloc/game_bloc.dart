@@ -71,7 +71,8 @@ class GameBloc extends Bloc<GameEvent, GameState> {
     if( word.isEmpty || currentAttempt.length < word.length){
       return;
     }
-    var checkWord = 
+    var checkWord = await gameRepository.checkWord(currentAttempt);
+    
 
 
     
